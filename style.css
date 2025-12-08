@@ -86,7 +86,7 @@ details {
 .work-grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
   gap: 20px;
 }
 
@@ -101,7 +101,34 @@ details {
 img:hover {
   opacity: .5;
 }
+.work-item {
+  position: relative;
+  display: inline-block;
+}
 
+.work-item img {
+  display: block;
+  width: 250px;   /* 너가 쓰던 크기 유지 */
+  height: auto;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);   /* 반투명 검정 */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 9px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-item:hover .caption {
+  opacity: 1;
+}
 /* MAINPIC (배경 이미지) */
 .mainpic {
   position: absolute;
