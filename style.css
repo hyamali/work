@@ -17,6 +17,20 @@ h1 {
   text-align: center;
   font-weight: 500;
 }
+.no-link-style {
+  color: inherit;
+  text-decoration: none;
+}
+.no-link-style:visited {
+  color: inherit;
+}
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit !important;
+  text-decoration: none !important;
+}
 
 p {
   font-family: sans-serif;
@@ -67,7 +81,7 @@ details {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-  gap: 10px;
+  gap: 20px;
 }
 
 .work-grid img {
