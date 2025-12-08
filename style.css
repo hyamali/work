@@ -1,0 +1,110 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+  margin: 30px;
+  margin-left: 100px;
+  background-color: ;
+  word-break: keep-all;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 14pt;
+  text-align: center;
+  font-weight: 500;
+}
+
+p {
+  font-family: sans-serif;
+  line-height: 20pt;
+  font-size: 9pt;
+  font-weight: 500;
+}
+
+li {
+  font-family: sans-serif;
+  font-size: 12px;
+  margin: 5px;
+}
+
+.nobullet {
+  list-style: none;
+  font-size: 12px;
+  line-height: 13pt;
+  font-weight: 500;
+}
+
+/* 메뉴 정렬 */
+.menu {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  display: block !important;
+}
+
+/* summary 기본 스타일 복구 */
+summary {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: initial;
+}
+
+/* details는 block으로 */
+details {
+  width: 100%;
+  display: block;
+}
+
+/* WORK GRID */
+.work-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 10px;
+}
+
+.work-grid img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+}
+
+/* 기본 이미지 hover */
+img:hover {
+  opacity: .5;
+}
+
+/* MAINPIC (배경 이미지) */
+.mainpic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  z-index: -100;
+}
+
+.mainpic:hover {
+  opacity: 1 !important;
+}
+
+/* FOOTER 중앙 고정 */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  padding: 10px 20px;
+  background: white;
+}
