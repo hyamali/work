@@ -12,52 +12,81 @@ body {
 }
 
 h1 {
-  font-family: sans-serif;
-  font-size: 14pt;
-  text-align: center;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Courier New", monospace;
+  font-size: 15pt;
   font-weight: 500;
+  z-index: 1500;
 }
+
 .no-link-style {
-  color: inherit;
   text-decoration: none;
-}
-.no-link-style:visited {
   color: inherit;
 }
-a,
-a:visited,
-a:hover,
-a:active {
-  color: inherit !important;
-  text-decoration: none !important;
+
+/* h1 아래 가로선 */
+.top-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;     /* h1이 들어갈 공간 + 원래 선 위치 */
+  background: white;
+  z-index: 1400;
+  border-bottom: 1px solid black;
+  box-shadow: inset 0 -1px 0 white,  /* 안쪽 흰색 */
+              inset 0 -2px 0 black;  /* 바깥 검정 */
 }
 
-p {
-  font-family: sans-serif;
-  line-height: 20pt;
-  font-size: 9pt;
-  font-weight: 500;
-}
-
-li {
-  font-family: sans-serif;
-  font-size: 12px;
-  margin: 5px;
-}
-
-.nobullet {
-  list-style: none;
-  font-size: 12px;
-  line-height: 13pt;
-  font-weight: 500;
-}
-
-/* 메뉴 정렬 */
+/* 메뉴 왼쪽 고정 */
 .menu {
+  position: fixed;
+  top: 80px;
+  left: 20px;
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  display: block !important;
+  flex-direction: column;
+  gap: 18px;
+  font-family: "Courier New", monospace;
+  z-index: 1200;
+}
+
+/* 메뉴 글씨 스타일 */
+.menu a {
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* 메뉴 오른쪽 전체 세로선 */
+.menu::after {
+  content: "";
+  position: fixed;
+  top: 70px;  /* top-line 아래 */
+  left: 120px;
+
+  width: 3px;                /* ★ 꼭 필요! 줄 너비 */
+  height: calc(100vh - 70px);
+
+  background: white;         /* 안쪽 흰색 */
+
+  /* 테두리 효과 */
+  box-shadow:
+    inset -1px 0 0 black,    /* 오른쪽 검정 테두리 */
+    inset -2px 0 0 white,    /* 안쪽 흰색 */
+    inset 1px 0 0 black;     /* 왼쪽 검정 테두리 */
+
+  z-index: 1200;
+}
+
+/* 콘텐츠(각 페이지)는 메뉴 오른쪽에서 시작됩니다 */
+.content {
+  margin-left: 160px;  /* 세로선 오른쪽 공간 */
+  padding: 100px 40px;
 }
 
 /* summary 기본 스타일 복구 */
@@ -80,12 +109,7 @@ summary {
 details {
   width: 100%;
   display: block;
-}
-
-img {
-  width: 600px;
-  display: block;
-  margin: 0 auto;   /* ⬅ 가운데 정렬의 핵심 */
+  font-size: 14px;
 }
 .work-grid {
   width: 100%;
@@ -96,7 +120,7 @@ img {
 }
 
 .work-grid img {
-  width: 800px;     /* 원하는 이미지 너비 (원하는 크기로 조절 가능) */
+  width: 900px;     /* 원하는 이미지 너비 (원하는 크기로 조절 가능) */
   height: auto;
   object-fit: cover;
   display: block;
