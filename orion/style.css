@@ -6,11 +6,9 @@
 
 body {
   margin: 30px;
-  margin-left: 100px;
   background-color: ;
   word-break: keep-all;
 }
-
 h1 {
   position: fixed;
   top: 20px;
@@ -120,6 +118,7 @@ details {
   display: block;
   font-size: 14px;
 }
+
 .work-grid {
   width: 100%;
   display: grid;
@@ -129,12 +128,13 @@ details {
 }
 
 .work-grid img {
-  width: 900px;     /* 원하는 이미지 너비 (원하는 크기로 조절 가능) */
+  width: 500px;     /* 원하는 이미지 너비 (원하는 크기로 조절 가능) */
   height: auto;
   object-fit: cover;
   display: block;
+}
 
-
+/* MAINPIC (배경 이미지) */
 .mainpic {
   position: absolute;
   top: 50%;
@@ -150,12 +150,12 @@ details {
   opacity: 1 !important;
 }
 
-/* FOOTER 중앙 고정 */
 footer {
-  font-family: Courier New;
-  font-size: 13px;
   position: fixed;
   bottom: 0;
-  left: 5px;
+  left: 0;      /* 반드시 0으로 해야 화면 왼쪽 */
   width: 100%;
+  font-family: Courier New;
+  font-size: 13px;
+  padding-left: 10px;  /* 여백은 이렇게 줘야 함 */
 }
