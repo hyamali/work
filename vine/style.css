@@ -1,0 +1,161 @@
+		*{
+ margin : 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+  margin: 30px;
+  background-color: ;
+  word-break: keep-all;
+}
+h1 {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Courier New;
+  font-size: 13pt;
+  font-weight: 500;
+  z-index: 1500;
+}
+
+.no-link-style {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* h1 아래 가로선 */
+.top-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;     /* h1이 들어갈 공간 + 원래 선 위치 */
+  background: white;
+  z-index: 1400;
+  border-bottom: 1px solid black;
+  box-shadow: inset 0 -1px 0 white,  /* 안쪽 흰색 */
+              inset 0 -2px 0 black;  /* 바깥 검정 */
+}
+
+
+/* 메뉴 왼쪽 고정 */
+.menu {
+  position: fixed;
+  top: 70px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: "Courier New", monospace;
+  z-index: 1200;
+}
+
+/* 메뉴 글씨 스타일 */
+.menu a {
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+  padding-left: 0;
+  margin-left: 0;
+}
+.menu-bg {
+  position: fixed;
+  top: 60px;  /* top-line 아래 */
+  left: 0;
+  width: 120px;  /* 세로선 위치 */
+  height: calc(100vh - 70px);
+  background: white;
+  z-index: 1000; /* 메뉴보다 아래, 콘텐츠보다 위 */
+}
+/* 메뉴 오른쪽 전체 세로선 */
+.menu::after {
+  content: "";
+  position: fixed;
+  top: 60px;  /* top-line 아래 */
+  left: 120px;
+
+  width: 3px;                /* ★ 꼭 필요! 줄 너비 */
+  height: calc(100vh - 70px);
+
+  background: white;         /* 안쪽 흰색 */
+
+  /* 테두리 효과 */
+  box-shadow:
+    inset -1px 0 0 black,    /* 오른쪽 검정 테두리 */
+    inset -2px 0 0 white,    /* 안쪽 흰색 */
+    inset 1px 0 0 black;     /* 왼쪽 검정 테두리 */
+
+  z-index: 1200;
+}
+
+/* 콘텐츠(각 페이지)는 메뉴 오른쪽에서 시작됩니다 */
+.content {
+  margin-left: 160px;  /* 세로선 오른쪽 공간 */
+  padding: 100px 40px;
+}
+
+/* summary 기본 스타일 복구 */
+summary {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: initial;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+summary {
+    list-style: none;
+}
+
+/* details는 block으로 */
+details {
+  width: 100%;
+  display: block;
+  font-size: 14px;
+}
+
+.work-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;   /* ⬅ 무조건 한 줄에 1칸만 */
+  gap: 20px;
+  justify-items: center;        /* 가운데 정렬 */
+}
+
+.work-grid img {
+  width: 900px;     /* 원하는 이미지 너비 (원하는 크기로 조절 가능) */
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* MAINPIC (배경 이미지) */
+.mainpic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  z-index: -100;
+}
+
+.mainpic:hover {
+  opacity: 1 !important;
+}
+
+/* FOOTER 중앙 고정 */
+footer {
+  font-family: Courier New;
+  font-size: 13px;
+  position: fixed;
+  bottom: 0;
+  left: 5px;
+  width: 100%;
+}
