@@ -133,7 +133,7 @@ details {
   height: auto;
   object-fit: cover;
   display: block;
-
+}
 
 .mainpic {
   position: absolute;
@@ -150,12 +150,11 @@ details {
   opacity: 1 !important;
 }
 
-/* FOOTER 중앙 고정 */
 footer {
-  font-family: Courier New;
-  font-size: 13px;
   position: fixed;
-  bottom: 0;
-  left: 5px;
-  width: 100%;
+  bottom: 10px;
+  left: 10px;
+  font-size: 11px !important;
+  font-family: "Courier New";
+  z-index: 2000;
 }
