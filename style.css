@@ -40,7 +40,6 @@ h1 {
               inset 0 -2px 0 black;  /* 바깥 검정 */
 }
 
-
 /* 메뉴 왼쪽 고정 */
 .menu {
   position: fixed;
@@ -138,51 +137,46 @@ details {
 img:hover {
   opacity: .5;
 }
+
+/* 이미지 + 캡션 감싸는 요소 */
 .work-item {
   position: relative;
-  display: inline-block;
+  width: 100%;
+  overflow: hidden;     /* 캡션 영역 깔끔하게 정리 */
 }
 
+/* 이미지 기본 스타일 */
 .work-item img {
-  display: block;
-  width: 250px;   /* 너가 쓰던 크기 유지 */
+  width: 100%;
   height: auto;
+  display: block;
 }
 
+/* 캡션 박스 */
 .caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,0.6);   /* 반투명 검정 */
-  color: white;
-  padding: 10px;
-  text-align: center;
-  font-size: 9px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.work-item:hover .caption {
-  opacity: 1;
-}
-/* MAINPIC (배경 이미지) */
-.mainpic {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 80vw;
-  max-height: 80vh;
-  object-fit: contain;
-  z-index: -100;
+  
+  width: 100%;                 /* ← 이미지 가로 전체로 확장 */
+  text-align: center;
+  padding: 10px 0;
+
+  background: rgba(0, 0, 0, 0.5);  /* ← 불투명도 제대로 적용됨 */
+  color: white;
+
+  opacity: 0;                  /* 기본 숨김 */
+  transition: opacity .3s ease;
+  pointer-events: none;
+  font-size: 10px;
 }
 
-.mainpic:hover {
-  opacity: 1 !important;
+/* hover 시 보이기 */
+.work-item:hover .caption {
+  opacity: 1;
 }
 
-/* FOOTER 중앙 고정 */
 footer {
   font-family: Courier New;
   font-size: 13px;
